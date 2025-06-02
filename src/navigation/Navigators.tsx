@@ -67,7 +67,7 @@ const Navigators = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="AuthScreen">
+      <Stack.Navigator initialRouteName="LoginScreen">
         {!user ? (
           <>
             <Stack.Screen

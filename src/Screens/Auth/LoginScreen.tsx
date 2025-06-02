@@ -25,6 +25,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import IMAGES from '../../assets/images/images';
+import IconComponent from '../../component/Icon/IconComponent';
 // import {PhoneSignIn} from '../../utils/hooks/PhoneAuth';
 
 const LoginScreen = () => {
@@ -95,17 +96,35 @@ const LoginScreen = () => {
             // justifyContent: 'flex-end'
           },
         ]}>
-        <View style={{paddingHorizontal:scale(100),width: '100%',alignItems: 'center',backgroundColor: 'green'}}>
-          <Image
-            source={require('../../assets/images/login/loginimage.png')}
-            // resizeMode='contain'
+          <View style={{backgroundColor:'#FF3C5A',height: '25%'}}>
+        <View
+          style={{
+            flexDirection: 'row',
+            padding: scale(20),
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            width: '100%',
+          }}>
+          <View
             style={{
-              height: scale(250),
-              aspectRatio: 1
-              // borderRadius: 10,
-            }}
-          />
-          <IMAGES.IcLoginImage />
+              borderWidth: 1,
+              borderColor: '#3c3c3c',
+              borderRadius: scale(8),
+              padding: scale(5),
+              height: scale(35),
+              width: scale(35),
+            }}>
+            <IconComponent
+              iconType="MaterialCommunityIcons"
+              iconName={'arrow-left'}
+              size={25}
+              color={'#042b5b'}
+            />
+          </View>
+          <View style={{}}>
+            <IMAGES.IcAuthHeader />
+          </View>
+        </View>
         </View>
         <View
           style={{

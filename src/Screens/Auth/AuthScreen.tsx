@@ -25,6 +25,8 @@ import Animated, {
 } from 'react-native-reanimated';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import IMAGES from '../../assets/images/images';
+import IconComponent from '../../component/Icon/IconComponent';
+import DividerLine from '../Home/components/DividerLine';
 // import {PhoneSignIn} from '../../utils/hooks/PhoneAuth';
 
 const AuthScreen = () => {
@@ -95,9 +97,34 @@ const AuthScreen = () => {
             // justifyContent: 'flex-end'
           },
         ]}>
-            <View>
-
-            </View>
+        <View
+          style={{
+            flexDirection: 'row',
+            padding: scale(20),
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            width: '100%',
+          }}>
+          <View
+            style={{
+              borderWidth: 1,
+              borderColor: '#3c3c3c',
+              borderRadius: scale(8),
+              padding: scale(5),
+              height: scale(35),
+              width: scale(35)
+            }}>
+            <IconComponent
+              iconType="MaterialCommunityIcons"
+              iconName={'arrow-left'}
+              size={25}
+              color={'#042b5b'}
+            />
+          </View>
+          <View style={{}}>
+            <IMAGES.IcAuthHeader />
+          </View>
+        </View>
         <View
           style={{
             paddingHorizontal: scale(100),
@@ -125,28 +152,50 @@ const AuthScreen = () => {
             loading={loading}
             onPress={() => onSubmit()}
           />
-          {/* <CommonButton
-              text={'SignOut'}
-              loading={loading}
-              onPress={() => signOut()}
-            /> */}
+          <DividerLine
+            text={'Or login with'}
+            containerStyle={{marginVertical: scale(10)}}
+          />
           <View
             style={{
-              width: '100%',
-              alignItems: 'center',
               flexDirection: 'row',
-              justifyContent: 'center',
-            }}></View>
-          <Text style={styles.text}>
-            By clicking, I accept the{' '}
-            <Text style={[styles.text, {fontFamily: 'Montserrat-Bold'}]}>
-              Terms and Conditions
-            </Text>{' '}
-            and{' '}
-            <Text style={[styles.text, {fontFamily: 'Montserrat-Bold'}]}>
-              Privacy Policy
-            </Text>
-          </Text>
+            //   padding: scale(20),
+              justifyContent: 'space-between',
+              width: '100%',
+              marginTop: scale(10),
+              columnGap: scale(20)
+            }}>
+            <View
+              style={{
+                borderWidth: 1,
+                borderColor: '#3c3c3c',
+                borderRadius: 8,
+                padding: scale(15),
+                flex: 1,
+                flexDirection: 'row',
+                justifyContent: 'center',
+                alignItems: 'center',
+                columnGap: scale(5)
+              }}>
+              <IMAGES.IcGoogle />
+              <Text style={{fontSize: scale(18)}}>Google</Text>
+            </View>
+            <View
+              style={{
+                borderWidth: 1,
+                borderColor: '#3c3c3c',
+                borderRadius: 8,
+                padding: scale(15),
+                flex: 1,
+                flexDirection: 'row',
+                justifyContent: 'center',
+                alignItems: 'center',
+                columnGap: scale(5)
+              }}>
+              <IMAGES.IcApple />
+              <Text style={{fontSize: scale(18)}}>Apple</Text>
+            </View>
+          </View>
           <View style={{height: '5%'}} />
         </View>
       </Animated.View>
